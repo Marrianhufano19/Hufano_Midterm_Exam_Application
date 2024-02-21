@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Product;
+
+class ProductController extends Controllers
+{
+    public functiopn index()
+     {
+        //Get all products from the repository
+        $products = Product::all();
+
+        //Pass the products to the view
+        return view('products.index', compact(Gadget));
+}
+
+    public function getByTheme($theme)
+{
+    // Get all products that match the selected theme
+    $products = Gadget::where('theme', $theme) ->get();
+
+    // Pass the products to the view
+    return view('products.index', compactr('products'));
+     }
+}
